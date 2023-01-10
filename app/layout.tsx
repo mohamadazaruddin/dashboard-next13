@@ -10,11 +10,11 @@ export default function RootLayout({
       <head />
       <body>
         <div className="bg-primary h-screen overflow-y-auto py-5">
-          <div className="flex h-full">
+          <div className="flex h-full w-full">
             <div className="h-full">
               <SideNav />
             </div>
-            <div> {children}</div>
+            <div className="h-full w-full"> {children}</div>
           </div>
         </div>
       </body>
