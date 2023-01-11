@@ -9,6 +9,7 @@ export default function MonthlyPinned() {
       status: "New Feedback",
       icon: <OneIcon />,
       bgColor: "bg-[#f7dac0]",
+      days: "5d",
     },
     {
       category: "Harmony",
@@ -16,6 +17,7 @@ export default function MonthlyPinned() {
       status: " Deadline is  today",
       icon: <ExclamationIcon />,
       bgColor: "bg-[#000000]",
+      days: "5d",
     },
     ,
     {
@@ -24,11 +26,12 @@ export default function MonthlyPinned() {
       status: "Accepted",
       icon: <TickIcon />,
       bgColor: "bg-[#a6bcc4]",
+      days: "5d",
     },
   ];
   return (
     <div>
-      <div className="px-8 py-5">
+      <div className="px-8 py-5 ">
         <div className="flex justify-between ">
           <div className="text-md font-semibold">Monthly pinned</div>
           <div className="text-sm text-gray-500 ">view all</div>
@@ -39,7 +42,10 @@ export default function MonthlyPinned() {
               key={i}
               className="p-5 bg-primary border border-primary-200 mb-4"
             >
-              <p className="text-xs text-gray-500 ">{data?.category}</p>
+              <p className="text-xs text-gray-500 flex justify-between">
+                {data?.category}
+                <span> {data?.days}</span>
+              </p>
               <h2 className=" text-md font-bold	mt-1">{data?.title}</h2>
 
               <div className="flex items-center mt-3">

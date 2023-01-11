@@ -1,13 +1,19 @@
+"use client";
 import Link from "next/link";
+
 import React from "react";
 import {
   DashboardIcon,
   DegreeIcon,
+  LogoutIcon,
   ResourceIcon,
   SettingIcon,
 } from "./components/Icons";
-
+import { usePathname } from "next/navigation";
 export default function SideNav() {
+  const path = usePathname();
+  console.log(path, "path");
+
   return (
     <div className="w-64 py-9 px-8  h-full flex flex-col	justify-between">
       <div>
@@ -19,7 +25,9 @@ export default function SideNav() {
             <li>
               <Link
                 href="/dashboard"
-                className="py-2 font-semibold px-3	 w-full block hover:bg-primary-200"
+                className={`py-2 font-semibold px-3 	 w-full block 
+                 ${path == "/dashboard" ? "bg-primary-200" : " "} 
+                 hover:bg-primary-200`}
               >
                 <div className="flex items-center	">
                   <span className="pr-1.5 w-7 ">
@@ -73,7 +81,12 @@ export default function SideNav() {
       </div>
 
       <div className="flex items-center justify-center ">
-        <button>Log out</button>
+        <button className="flex items-center  font-semibold ">
+          <div className="h-[40px] w-[40px] grid place-items-center rounded-full bg-[#000] text-[#fff] mr-[10px] ">
+            <LogoutIcon />
+          </div>{" "}
+          Log out
+        </button>
       </div>
     </div>
   );

@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .loadinglazy {
+    height: 0;
+    animation-name: lazyLoad;
+    animation-duration: 0.5s;
+
+}
+
+
+
+@keyframes lazyLoad {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 100%;
+    }
+} */
