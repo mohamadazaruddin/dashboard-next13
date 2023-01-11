@@ -1,6 +1,9 @@
+"use client";
 import { url } from "inspector";
-import React from "react";
+import React, { useEffect } from "react";
 import { TimeIcon } from "./Icons";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function ReportsImage(props: {
   image: string;
@@ -9,6 +12,9 @@ export default function ReportsImage(props: {
   description: string;
   icon: any;
 }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <div
@@ -16,6 +22,7 @@ export default function ReportsImage(props: {
           backgroundImage: `url(${props.image})`,
         }}
         className={` w-full h-full bg-cover	bg-no-repeat bg-center rounded p-5 flex flex-col	justify-between`}
+        // data-aos="fade-down"
       >
         <div>
           <p className="text-md font-semibold">{props.title}</p>

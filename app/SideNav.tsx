@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   DashboardIcon,
   DegreeIcon,
@@ -9,13 +9,23 @@ import {
   ResourceIcon,
   SettingIcon,
 } from "./components/Icons";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { usePathname } from "next/navigation";
 export default function SideNav() {
   const path = usePathname();
   console.log(path, "path");
-
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="w-64 py-9 px-8  h-full flex flex-col	justify-between">
+    <div
+      className="w-64 py-9 px-8  h-full flex flex-col	justify-between"
+      data-aos="zoom-in"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
       <div>
         <div className="flex justify-center">
           <img src="/logo.png" width="120" alt="logo" />

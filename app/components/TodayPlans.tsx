@@ -1,13 +1,24 @@
 import React from "react";
 import { TickIcon, TimeIcon } from "./Icons";
 import ReportsImage from "./ReportsImage";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function TodayPlans() {
   return (
     <>
-      <div className="text-lg bg-white-100 px-8 h-full w-full py-5 delay-100 delay-100 loadinglazy	">
+      <div
+        // data-aos="fade-down"
+        // data-aos-delay="50"
+        // data-aos-duration="1000"
+        // data-aos-once="true"
+        className="text-lg bg-white-100 px-8 h-full w-full py-5 delay-100 delay-100 loadinglazy	"
+      >
         <div className="flex justify-between items-center ">
-          <div className="text-md font-semibold">
+          <div
+            className="text-md font-semibold"
+            // data-aos="fade-up"
+            // data-aos-delay="5000"
+          >
             Today's plan
             <div className="text-sm text-gray-500 ">June 14th, 2022</div>
           </div>
