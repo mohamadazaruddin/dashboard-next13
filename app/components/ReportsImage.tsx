@@ -23,6 +23,10 @@ export default function ReportsImage(props: {
         }}
         className={` w-full h-full bg-cover	bg-no-repeat bg-center rounded p-5 flex flex-col	justify-between`}
         // data-aos="fade-down"
+        data-aos="zoom-out"
+        data-aos-delay="500"
+        data-aos-duration="1000"
+        data-aos-once="true"
       >
         <div>
           <p className="text-md font-semibold">{props.title}</p>

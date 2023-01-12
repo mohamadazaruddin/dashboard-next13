@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 
-import React, { useEffect } from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import React, { useEffect, useState } from "react";
 import {
   DashboardIcon,
   DegreeIcon,
@@ -12,15 +13,19 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 export default function SideNav() {
+  const [mounted, setMounted] = useState(false);
   const path = usePathname();
   console.log(path, "path");
   useEffect(() => {
     AOS.init();
+    setMounted(true);
   }, []);
+
   return (
     <div
-      className="w-64 py-9 px-8  h-full flex flex-col	justify-between"
+      className="w-64 py-2 px-8  h-full flex flex-col	justify-between"
       data-aos="zoom-in"
       data-aos-delay="50"
       data-aos-duration="1000"
@@ -28,16 +33,33 @@ export default function SideNav() {
     >
       <div>
         <div className="flex justify-center">
-          <img src="/logo.png" width="120" alt="logo" />
+          <Link href={"/"}>
+            <img
+              src="/logo.png"
+              width="120"
+              className="dark:hidden"
+              alt="logo"
+            />
+            <img
+              src="/logoDark.png"
+              width="120"
+              className="dark:block hidden"
+              alt="logo"
+            />
+          </Link>
         </div>
-        <nav className="mt-8">
+        <nav className="mt-6  dark:text-white-100 ">
           <ul className="list-none">
             <li>
               <Link
                 href="/dashboard"
                 className={`py-2 font-semibold px-3 	 w-full block 
-                 ${path == "/dashboard" ? "bg-primary-200" : " "} 
-                 hover:bg-primary-200`}
+                 ${
+                   path == "/dashboard"
+                     ? "bg-primary-200 dark:bg-[#0E0E0E]"
+                     : " "
+                 } 
+                 hover:bg-primary-200 dark:hover:bg-[#0E0E0E] `}
               >
                 <div className="flex items-center	">
                   <span className="pr-1.5 w-7 ">
@@ -50,9 +72,9 @@ export default function SideNav() {
             <li>
               <Link
                 href="/dashboard"
-                className="py-2 font-semibold px-3	 w-full block hover:bg-primary-200"
+                className="py-2 font-semibold px-3 dark:hover:bg-[#0E0E0E]	 w-full block hover:bg-primary-200 dark:hover:bg-[#0E0E0E]"
               >
-                <div className="flex items-center	">
+                <div className="flex items-center">
                   <span className="pr-1.5 w-7">
                     <DegreeIcon />
                   </span>
@@ -63,7 +85,7 @@ export default function SideNav() {
             <li>
               <Link
                 href="/dashboard"
-                className="py-2 font-semibold px-3	 w-full block hover:bg-primary-200"
+                className="py-2 font-semibold px-3	 w-full block hover:bg-primary-200 dark:hover:bg-[#0E0E0E]"
               >
                 <div className="flex items-center	">
                   <span className="pr-1.5 w-7">
@@ -76,7 +98,7 @@ export default function SideNav() {
             <li>
               <Link
                 href="/dashboard"
-                className="py-2 font-semibold px-3	 w-full block hover:bg-primary-200"
+                className="py-2 font-semibold px-3	 w-full block hover:bg-primary-200 dark:hover:bg-[#0E0E0E]"
               >
                 <div className="flex items-center	">
                   <span className="pr-1.5 w-7">
@@ -91,8 +113,8 @@ export default function SideNav() {
       </div>
 
       <div className="flex items-center justify-center ">
-        <button className="flex items-center  font-semibold ">
-          <div className="h-[40px] w-[40px] grid place-items-center rounded-full bg-[#000] text-[#fff] mr-[10px] ">
+        <button className="flex items-center  font-semibold dark:text-white-100">
+          <div className="h-[40px] w-[40px] grid place-items-center rounded-full bg-[#000] dark:bg-[#2746e6] text-[#fff] mr-[10px]  ">
             <LogoutIcon />
           </div>{" "}
           Log out

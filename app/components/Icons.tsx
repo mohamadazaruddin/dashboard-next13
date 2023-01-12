@@ -245,6 +245,19 @@ export const PencilIcon = () => {
     </svg>
   );
 };
+export const PlusIcon = (props: { width: string; height: string }) => {
+  return (
+    <svg
+      width={props.width}
+      height={props.height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M11 19V13H5V11H11V5H13V11H19V13H13V19H11Z" fill="white" />
+    </svg>
+  );
+};
 export const MessageIcon = () => {
   return (
     <svg

@@ -20,7 +20,9 @@ export default function Profile(props: {
           />
           <span className={animation}></span>
         </div>
-        <p className="text-sm font-bold mt-[15px]">{props.name}</p>
+        <p className="text-sm font-bold mt-[15px] dark:text-white-100">
+          {props.name}
+        </p>
         <p className="text-xs font-bold  text-gray-500">{props.post}</p>
       </div>
     </>

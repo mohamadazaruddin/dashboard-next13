@@ -1,5 +1,5 @@
 import React from "react";
-import { TickIcon, TimeIcon } from "./Icons";
+import { PlusIcon, TickIcon, TimeIcon } from "./Icons";
 import ReportsImage from "./ReportsImage";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,25 +11,25 @@ export default function TodayPlans() {
         // data-aos-delay="50"
         // data-aos-duration="1000"
         // data-aos-once="true"
-        className="text-lg bg-white-100 px-8 h-full w-full py-5 delay-100 delay-100 loadinglazy	"
+        className="text-lg bg-white-100 dark:bg-[#0E0E0E] px-8 h-full w-full py-5 delay-100 delay-100 	"
       >
         <div className="flex justify-between items-center ">
           <div
-            className="text-md font-semibold"
+            className="text-md font-semibold dark:text-white-100"
             // data-aos="fade-up"
             // data-aos-delay="5000"
           >
             Today's plan
             <div className="text-sm text-gray-500 ">June 14th, 2022</div>
           </div>
-          <div>
-            <button className=" animate-bounce h-[40px] w-[40px] grid place-items-center rounded-full bg-[#000] text-[#fff] ">
-              +
+          <div className="group ">
+            <button className=" group-hover:animate-bounce h-[40px] w-[40px] grid place-items-center rounded-full bg-[#000] text-[#fff] ">
+              <PlusIcon width="20" height="20" />
             </button>
           </div>
         </div>
         <div className="mt-8">
-          <h2 className="text-2xl	font-bold">
+          <h2 className="text-2xl	font-bold dark:text-white-100">
             Sustainable development goals and health innovation
           </h2>
           <div className="flex justify-between mt-7">
@@ -44,7 +44,9 @@ export default function TodayPlans() {
               </div>
             </div>
             <div className="border-l pl-2 border-[#eee6e2]">
-              <p className="font-semibold text-sm">Medi Team Meeting</p>
+              <p className="font-semibold text-sm dark:text-white-100">
+                Medi Team Meeting
+              </p>
               <p className="text-xs text-gray-500">13:30 - 14:30</p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { MessageIcon, PencilIcon } from "./Icons";
+import { MessageIcon, PencilIcon, PlusIcon } from "./Icons";
 import Profile from "./Profile";
 
 export default function ProfileDetails() {
@@ -23,9 +23,9 @@ export default function ProfileDetails() {
               <MessageIcon />
             </button>
           </div>
-          <div>
-            <button className=" animate-bounce h-[30px] w-[30px] grid place-items-center rounded-full bg-[#000] text-[#fff] m-auto ">
-              +
+          <div className="group ">
+            <button className="group-hover:animate-bounce h-[30px] w-[30px] grid place-items-center rounded-full bg-[#000] text-[#fff] m-auto ">
+              <PlusIcon width={"16"} height={"16"} />
             </button>
           </div>
         </div>
