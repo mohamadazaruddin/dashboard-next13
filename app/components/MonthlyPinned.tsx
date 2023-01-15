@@ -46,10 +46,6 @@ export default function MonthlyPinned() {
           {pinnedData.map((data, i) => (
             <div
               key={i}
-              data-aos="zoom-in"
-              data-aos-delay="500"
-              data-aos-duration="1000"
-              data-aos-once="false"
               className="p-5 bg-primary border border-primary-200 dark:border-[#0E0E0E] mb-4 dark:bg-[#0E0E0E]"
             >
               <p className="text-xs text-gray-500 flex justify-between">

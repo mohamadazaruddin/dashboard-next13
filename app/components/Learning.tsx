@@ -49,14 +49,7 @@ export default function Learning() {
       </div>
       <div className=" grid grid-flow-col grid-rows-2 mt-7 ">
         {pinnedData.map((data: any, i) => (
-          <div
-            key={i}
-            className=" bg-primary flex mb-6 dark:bg-[#17161B] "
-            data-aos="zoom-out"
-            data-aos-delay="500"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
+          <div key={i} className=" bg-primary flex mb-6 dark:bg-[#17161B] ">
             <div
               className={`${data.bgColor} flex items-center	 justify-center	px-3 mr-3 `}
             >

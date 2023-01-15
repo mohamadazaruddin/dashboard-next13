@@ -23,7 +23,7 @@ export default function TodayPlans() {
             <div className="text-sm text-gray-500 ">June 14th, 2022</div>
           </div>
           <div className="group ">
-            <button className=" group-hover:animate-bounce h-[40px] w-[40px] grid place-items-center rounded-full bg-[#000] text-[#fff] ">
+            <button className=" group-hover:animate-bounce h-[40px] w-[40px] grid place-items-center dark:bg-[#2746e6] rounded-full bg-[#000] text-[#fff] ">
               <PlusIcon width="20" height="20" />
             </button>
           </div>

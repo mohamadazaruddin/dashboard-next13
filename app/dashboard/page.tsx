@@ -12,9 +12,9 @@ export default function Dashboard() {
     AOS.init();
   }, []);
   return (
-    <div className="flex h-full w-full">
+    <div className="flex h-full w-full max-[768px]:flex-col">
       <div
-        className="w-[50%]"
+        className="w-[50%]  max-[768px]:w-full"
         data-aos="zoom-in"
         data-aos-delay="150"
         data-aos-duration="1000"
@@ -23,7 +23,7 @@ export default function Dashboard() {
         <TodayPlans />
       </div>
       <div
-        className="w-[50%]"
+        className="w-[50%] max-[768px]:w-full"
         data-aos="zoom-in"
         data-aos-delay="250"
         data-aos-duration="1000"
@@ -31,15 +31,6 @@ export default function Dashboard() {
       >
         <MonthlyPinned />
         <Learning />
-      </div>
-      <div
-        className="w-[12%] border-l-2 border-[#eee6e2]"
-        data-aos="zoom-in"
-        data-aos-delay="350"
-        data-aos-duration="1000"
-        data-aos-once="true"
-      >
-        <ProfileDetails />
       </div>
     </div>
   );
