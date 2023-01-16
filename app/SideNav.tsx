@@ -22,7 +22,10 @@ import "aos/dist/aos.css";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import ProfileDetails from "./components/ProfileDetails";
-export default function SideNav() {
+export default function SideNav(props: {
+  colorModeSwitcher: () => void;
+  colorMode: string;
+}) {
   const [mounted, setMounted] = useState(false);
   const [showMenu, setshowMenu] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -48,6 +51,7 @@ export default function SideNav() {
     }
     console.log(showProfile, "showmneu");
   };
+
   return (
     <>
       <div
@@ -58,6 +62,15 @@ export default function SideNav() {
         data-aos-once="true"
       >
         <div>
+          <div className=" text-end ">
+            <button onClick={() => props.colorModeSwitcher()}>
+              {props.colorMode === "light" ? (
+                <MdDarkMode />
+              ) : (
+                <MdLightMode className="text-white-100" />
+              )}
+            </button>
+          </div>
           <div className="flex justify-center">
             <Link href={"/"}>
               <img
@@ -280,10 +293,21 @@ export default function SideNav() {
               />
             </Link>
           </div>
-          <div className="menu btn">
-            <button onClick={openProfile} className="rounded-full">
-              <MdAccountCircle className="text-[20px] dark:text-white-100" />
-            </button>
+          <div className="menu btn flex items-center">
+            <div className="mr-6">
+              <button onClick={props.colorModeSwitcher}>
+                {props.colorMode === "light" ? (
+                  <MdDarkMode />
+                ) : (
+                  <MdLightMode className="text-white-100" />
+                )}
+              </button>
+            </div>
+            <div>
+              <button onClick={openProfile} className="rounded-full">
+                <MdAccountCircle className="text-[20px] dark:text-white-100" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
