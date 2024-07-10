@@ -7,7 +7,7 @@ export default function ProfileDetails() {
     <div className="px-6 py-9 h-full w-full">
       <div className="h-full w-full flex flex-col justify-between">
         <Profile
-          image="https://www.rcell.in/wp-content/uploads/2017/09/doctor-img-one.png"
+          image="/ArnoldBlue.svg"
           name="Dr Riddle"
           post="Scientist"
           active={true}
